@@ -181,11 +181,11 @@
 
     <div class="buttons">
         {#if $mode == 1 }
-            <button  on:click={newBoard} disabled>{"New"}</button>
-            <button  on:click={resetBoard} style="margin-left:20px;" disabled>{"Reset"}</button>
+            <button  on:click={newBoard} disabled>{"New Round"}</button>
+            <button  on:click={resetBoard} style="margin-left:20px;" disabled>{"Reset Score"}</button>
         {:else}
-            <button  on:click={newBoard} >{"New"}</button>
-            <button  on:click={resetBoard} style="margin-left:20px;" >{"Reset"}</button>
+            <button  on:click={newBoard} >{"New Round"}</button>
+            <button  on:click={resetBoard} style="margin-left:20px;" >{"Reset Score"}</button>
         {/if}
         
     </div>

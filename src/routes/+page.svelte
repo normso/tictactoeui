@@ -8,7 +8,7 @@
 
 <div class="container">
     <p>Get three in a row with Tic Tac Toe!</p>
-    <button on:click={clickHandler}>Create New</button>
+    <button on:click={clickHandler}>Create New Game</button>
 </div>
 
 
