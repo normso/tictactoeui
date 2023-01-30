@@ -1,7 +1,9 @@
 <script>
     import {boardState,chance,icon,score,websocket,statusMessage,mode} from "../stores/stores.js"
+    import { onMount } from "svelte";
 
     let mde; // 0 -> new , 1 -> reset
+
 
     const handleIcon =(e,r,c)=>{
         if (!$chance){
@@ -23,10 +25,12 @@
         
     }
 
+    
 
     const newBoard = (e)=>{
         const ele = document.querySelector(".overlay");
-        if (ele.style.display != "none"){
+        console.log(ele.style.display)
+        if (ele.style.display == "flex"){
             ele.style.display = "none";
             return;
         }
@@ -37,7 +41,7 @@
 
     const resetBoard = (e)=>{
         const ele = document.querySelector(".overlay");
-        if (ele.style.display != "none"){
+        if (ele.style.display == "flex"){
             ele.style.display = "none";
             return;
         }
@@ -65,6 +69,7 @@
         const ele = document.querySelector(".overlay");
         ele.style.display = "none";
     }
+
 
 
 </script>
@@ -180,13 +185,10 @@
     
 
     <div class="buttons">
-        {#if $mode == 1 }
-            <button  on:click={newBoard} disabled>{"New Round"}</button>
-            <button  on:click={resetBoard} style="margin-left:20px;" disabled>{"Reset Score"}</button>
-        {:else}
+        
             <button  on:click={newBoard} >{"New Round"}</button>
             <button  on:click={resetBoard} style="margin-left:20px;" >{"Reset Score"}</button>
-        {/if}
+        
         
     </div>
 </div>
@@ -209,8 +211,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width:70vw;
-        height:23vh;
+        padding: 50px 100px;
         background-color: #fff;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
@@ -242,11 +243,12 @@
 
     .board{
         margin-top: 80px;
-        height:35vh;
+        height:40vh;
+        
     }
     .row{
         display: flex;
-        width:70vw;
+        width:60vw;
         height:33.3%;
     }
 
@@ -309,7 +311,15 @@
     button:disabled{
         opacity: 0.6;
         cursor: not-allowed;
+    }
 
-    } 
-
+    @media (min-width:961px){
+        .row{
+            width:28vw;
+        }
+        .board{
+            height:40vh;
+        }
+    }
+    
 </style>

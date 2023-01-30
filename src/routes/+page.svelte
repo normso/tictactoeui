@@ -31,6 +31,12 @@
         padding: 20px;
     }
 
+    @media (min-width:961px){
+        p{
+            width:50%;
+        }
+    }
+
     button{
         border: 0;
         font-size: 20px;
