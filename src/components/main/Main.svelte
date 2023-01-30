@@ -248,7 +248,7 @@
     }
     .row{
         display: flex;
-        width:60vw;
+        width:65vw;
         height:33.3%;
     }
 
